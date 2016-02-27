@@ -74,7 +74,7 @@ Check the status of last uploaded file
 Check the status of previously uploaded file
 
     client.bulk_status(1233)
-    # 123455|1233_clean.csv|no|2|2|finished|1456521414|<url_to_result_ok.csv>|<url_to_all_results.csv
+    # 123455|1233_clean.csv|no|2|2|finished|1456521414|<url_to_result_ok.csv>|<url_to_all_results.csv>
 
 ## Development
 
