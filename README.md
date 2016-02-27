@@ -20,7 +20,60 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To use the gem, first include email_list_verify
+    require 'email_list_verify'
+
+Then create an instance of the EmailListVerify with api_key as the parameter
+```ruby
+api_key = "<YOUR_API_KEY>"
+client = EmailListVerify.new(api_key)
+```
+
+Now the API calls can be done via the client
+
+### For OneByOne Verification
+
+    client.one_by_one("<email_to_verify>")
+
+### To Upload a Bulk File
+
+    client.upload_file("<file_name>","<path/to/file>")
+
+path/to/file is optional if file_name file is present in same directory
+
+### To get the status of the last uploaded file
+
+    client.bulk_status
+
+### To get the status of any file with file_id
+
+    client.bulk_status("<file_id>")
+
+## Example
+
+Create a client
+
+    client = EmailListVerify.new("<api_key>")
+
+Verify Single Email
+
+    client.one_by_one("ankur13019@iiitd.ac.in")
+    # ok
+
+Upload a bulk verify file
+
+    client.upload_file("emails.txt")
+    # 1234
+
+Check the status of last uploaded file
+
+    client.bulk_status
+    # 123456|1234_clean.csv|no|0|0|new|1456521414||
+
+Check the status of previously uploaded file
+
+    client.bulk_status(1233)
+    # 123455|1233_clean.csv|no|2|2|finished|1456521414|<url_to_result_ok.csv>|<url_to_all_results.csv
 
 ## Development
 
