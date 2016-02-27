@@ -21,6 +21,7 @@ Or install it yourself as:
 ## Usage
 
 To use the gem, first include email_list_verify
+
     require 'email_list_verify'
 
 Then create an instance of the EmailListVerify with api_key as the parameter
